@@ -7,14 +7,13 @@ function ccgen(){
 				
 			});
 
-	$("#ccp").bind("change", function(){fillter();});
+	$("#ccpN").bind("change", function(){fillter();});
 	$("#cleanText").bind("click", function(){cleanText();});
 }
 
 function fillter(){
 	var binCC = document.console.ccp.value;
 	var binID = parseInt(binCC.substring(0,2));
-	
     switch(binID){
 		case 34:
 		case 37:
@@ -104,7 +103,6 @@ function darkside(p1,tr){
 				var cn=chkCard(cdi);
 				var ccnspc="";
 				var j;
-				for(j=0;j<=3;j++){if(document.console.ccnsp.options[j].selected){break;}}
 				if(j==1) ccnspc=" ";
 				else if(j==2) ccnspc="-";
 				var cdif="";
@@ -140,18 +138,15 @@ function darkside(p1,tr){
 				if(jou==0){
 					var out=out+=cdif;
 					if(document.console.ccexpdat.checked) var out=out+="|"+mes+'|'+year;
-					if(document.console.ccvi.checked) var out=out+="|"+eccv;
-					if(document.console.ccbank.checked) var out=out+="|"+cn+"\n";
+					if(document.console.ccvi.checked) var out=out+="|"+eccv+"\n";
 					else var out=out+="\n";
 				}else if(jou==1){
 					var out=out+=cdif;
 					if(document.console.ccvi.checked) var out=out+=", "+eccv;
-					if(document.console.ccexpdat.checked) var out=out+=", "+mes+'/'+year;		
-					if(document.console.ccbank.checked) var out=out+=", "+cn+"\n";
+					if(document.console.ccexpdat.checked) var out=out+=", "+mes+'/'+year+"\n";		
 					else var out=out+="\n";
 				}else if(jou==2){
 					var out=out+"<CreditCard>\n";
-					if(document.console.ccbank.checked) var out=out+"<CardNetwork>"+cn+"<\/CardNetwork>\n";
 					var out=out+"<CardNumber>"+cdif+"<\/CardNumber>\n";
 					if(document.console.ccvi.checked) var out=out+"<CardCCV2>"+eccv+"<\/CardCCV2>\n";
 					if(document.console.ccexpdat.checked) var out=out+"<CardExpDate>"+mes+"/"+year+"<\/CardExpDate>\n";
@@ -159,7 +154,6 @@ function darkside(p1,tr){
 				}else if(jou==3){
 					var out=out+"{\n";
 					var out=out+"\"CreditCard\":{\n";
-					if(document.console.ccbank.checked) var out=out+"\"CardNetwork\": \""+cn+"\"\n";
 					var out=out+"\"CardNumber\": \""+cdif+"\"\n";
 					if(document.console.ccvi.checked) var out=out+"\"CardCCV2\": \""+eccv+"\"\n";
 					if(document.console.ccexpdat.checked) var out=out+"\"CardExpDate\": \""+mes+"/"+year+"\"\n";
