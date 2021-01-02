@@ -7,7 +7,7 @@
 -->
 <link rel="stylesheet" type="text/css" href="./ccgen_files/css/ccgen_style.css">
 </head>
-<body onload="ccgen()" background="./ccgen_files/img/tesla.jpg" style="background-repeat: no-repeat;background-position: right; ">
+<body onload="ccgen()">
 <div><div id="__layout"><div class="font-primary"><div class=""><div class="container"><span class="text-white font-semibold tracking-wide text-teal-200"></span></div></div> <main id="main" class="pb-10 pt-31 text-gray-600"><div class="container min-h-70-screen"><div class="min-h-70-screen"><div class="text-center"><h1 class="text-3xl font-bold text-gray-700">&nbsp;</h1></div> <div class="flex mt-5"><div class="flex flex-wrap -mx-2 mt-5 text-gray-700"><div class="w-full sm:w-1/2 px-2"><form name="console" id="console" role="form" method="POST"><div><label class="block cursor-pointer relative">
 <span class="text-gray-600 font-medium text-xs absolute bg-white px-3 pt-1 ml-2 -mt-3">BIN</span> 
 <input type="text" id="ccpN" name="ccp" placeholder="453590" class="form-input block w-full">
@@ -62,8 +62,59 @@ December
 
 </label></div> <div class="mt-6">
 <a class="flex items-center justify-center shadow-md bg-teal-600 text-white font-medium w-full rounded py-3 hover:bg-teal-500 focus:bg-teal-700 focus:outline-none" name="gerar" id="gerar" style="cursor: pointer;">Generate Cards</a>
-</div></div> <div class="w-full sm:w-1/2 px-2"><div class="sm:h-full mt-6 sm:mt-0"><label class="block cursor-pointer relative h-full relative"><span class="text-gray-600 font-medium text-xs absolute bg-white px-3 pt-1 ml-2 -mt-3">RESULT</span> <textarea name="output2" id="output2" rows="5" placeholder="xxxxxxxxxx" class="form-textarea block w-full h-full resize-none font-fallback font-bold tracking-wide"></textarea></label></div></div></div></div></div></main></form>
-<footer class="py-1 bg-gray-100"></footer></div></div></div>
+</div></div> <div class="w-full sm:w-1/2 px-2"><div class="sm:h-full mt-6 sm:mt-0"><label class="block cursor-pointer relative h-full relative"><span class="text-gray-600 font-medium text-xs absolute bg-white px-3 pt-1 ml-2 -mt-3">RESULT</span> <textarea name="output2" id="output2" rows="5" placeholder="xxxxxxxxxx" class="form-textarea block w-full h-full resize-none font-fallback font-bold tracking-wide"></textarea></label>
+</div>
+</div>
+</div>
+
+<div class="sm:h-full mt-6 sm:mt-0" style="padding-left: 40px;padding-top: 20px;">
+		<table>
+			<tr>
+				<td>BIN:</td>
+				<td><label id="info_bin"></label></td>
+			</tr>
+			<tr>
+				<td>Card brand:</td>
+				<td><label id="info_brand"></label></td>
+			</tr>
+			<tr>
+				<td>Type:</td>
+				<td><label id="info_type"></label></td>
+			</tr>
+			<tr>
+				<td>Country:</td>
+				<td><label id="info_country"></label></td>
+			</tr>
+			<tr>
+				<td>Bank Name:</td>
+				<td><label id="info_bank_name"></label></td>
+			</tr>
+			<tr>
+				<td>Country Name:</td>
+				<td><label id="info_country_name"></label></td>
+			</tr>
+			<tr>
+				<td>Currencies:</td>
+				<td><label id="info_country_currencies_name"></label></td>
+			</tr>
+			<tr>
+				<td>Country Flag:</td>
+				<td><label id="info_emoji"></label></td>
+			</tr>
+			<tr>
+				<td>Bank Phone:</td>
+				<td><label id="info_bank_phone"></label></td>
+			</tr>
+		</table>
+</div>
+
+
+</div>
+
+</div></div></main></form>
+	
+<footer class="py-1 bg-gray-1">
+</footer></div></div></div>
 <script type="text/javascript" src="./ccgen_files/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="./ccgen_files/js/ccgen_eng.js"></script>
 </body>

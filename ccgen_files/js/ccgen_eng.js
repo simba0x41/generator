@@ -3,8 +3,7 @@ function ccgen(){
 	$("#gerar").bind("click",
 			function(){
 				darkside(document.console.ccp.value,document.console.tr.value);
-				showSave();
-				
+				bininfo(document.console.ccp.value);
 			});
 
 	$("#ccpN").bind("change", function(){fillter();});
@@ -53,6 +52,37 @@ function fillter(){
 function init(){
 	undefined="Undefined";
 	mkCClist();
+}
+
+function bininfo(b){
+	bin = b.substring(0,6);
+	var ajaxCall = $.ajax({
+	    url: './ccgen_files/api.php',
+	    type: 'GET',
+	    data: 'bin='+bin,
+	    beforeSend: function () {
+	        //$('#stop').attr('disabled', null);
+	        //$('#testar').attr('disabled', 'disabled');
+
+	    },
+	    
+	    success: function(data){
+	        var obj = JSON.parse(data);
+	        $("#info_bin").html(obj.bin);
+	        $("#info_brand").html(obj.brand);
+	        $("#info_type").html(obj.type);
+	        $("#info_country").html(obj.country);
+	        $("#info_country_name").html(obj.country_name);
+	        $("#info_emoji").html(obj.emoji);
+	        $("#info_bank_name").html(obj.bank_name);
+	        $("#info_bank_phone").html(obj.bank_phone);
+	        $("#info_country_currencies_name").html(obj.country_currencies_name);
+	        //document.getElementById("info_bin").innerHTML(obj.bin);
+
+	    } //end success
+	});
+
+
 }
 
 function rnd(frN,toN){
