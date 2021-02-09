@@ -3,7 +3,7 @@ function ccgen(){
 	$("#gerar").bind("click",
 			function(){
 				darkside(document.console.ccp.value,document.console.tr.value);
-				bininfo(document.console.ccp.value);
+				if(document.console.detail_bin.checked)bininfo(document.console.ccp.value);
 			});
 
 	$("#ccpN").bind("change", function(){fillter();});
