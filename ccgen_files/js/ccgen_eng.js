@@ -1,35 +1,10 @@
-function a(){
-			var xhr = new XMLHttpRequest();
-			var url = 'https://binchekr.com/lookup/';
-      var params = '448527';
-      xhr.open('GET', url+params);
-			//xhr.setRequestHeader('Cookie','__utma=176859643.959701123.1607579988.1607983830.1608057351.6; __utmz=176859643.1607579988.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); PHPSESSID=401hvjl42g7s6oucil9h3qdmn0');
-			//xhr.setRequestHeader('Upgrade-Insecure-Requests', '1');
-	  //xhr.setRequestHeader('Access-Control-Allow-Origin','*');
-      //xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-      //xhr.setRequestHeader('Accept','text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9');
-      xhr.setRequestHeader('User-Agent','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36');
-      
-      xhr.send(params);
-			xhr.onreadystatechange=function(){
-				if(xhr.readyState == 4 && xhr.status == 200){
-            alert(xhr.responseText);
-				}else{
-          alert(`Error ${xhr.status}: ${xhr.statusText}`);
-        }
-      };			
-}
-
 function ccgen(){
 	init();
 	$("#gerar").bind("click",
-		a()
-		/*
 			function(){
 				darkside(document.console.ccp.value,document.console.tr.value);
 				if(document.console.detail_bin.checked)bininfo(document.console.ccp.value);
-			}
-			*/ );
+			});
 
 	$("#ccpN").bind("change", function(){fillter();});
 	$("#cleanText").bind("click", function(){cleanText();});
